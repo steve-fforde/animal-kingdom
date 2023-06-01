@@ -6,62 +6,49 @@ Vehicle classes
 
 ```mermaid
 classDiagram
+
     class Vehicle{
-        <<abstract>>
-        Driver driver
-        void moveTo(Location)
+        <<Abstract>>
+        String driver
+        Engine engine
+        String location
+        Vehicle(String fuelType, String location)$
+        String describe()
+        void driveTo(String location)
     }
     class Engine{
-        <<concrete>>
-        String vinNumber
-        FuelType fuelType
-        boolean turnover()
+        String fuelType
+        boolean isRunning
+        Engine(String fuelType)$
+        void describe()
+        void start()
+        void stop()
     }
     class MilkFloat{
-        <<concrete>>
-        bottleCount
-        loadBottles()
-        removeBottles()
+        int numBottles
+        MilkFloat(String location)$
+        void loadBottles(int numToLoad)
+        void removeBottles(int numToRemove)
         }
     class PassengerVehicle{
-        <<abstract>>
-        Passenger[] passenger
-        int maxCapacity
+        <<Abstract>>
+        PassengerVehicle(int capacity, String fuelType, String location)$
+        int maxCapacity()
         int countPassengers()
+        String getPassenger(int seatNum)
+        void setPassenger(int seatNum, String passenger)
     }
     class Car{
-        <<concrete>>
+        
     }
     class Van{
-        <<concrete>>
+        loadGoods(int qty, String goods)
+        unloadGoods(int qty, String goods)
     }
-    Vehicle *-- Driver
-    Vehicle *-- Engine
-    Vehicle <|-- MilkFloat
-    Vehicle <|-- PassengerVehicle
-    PassengerVehicle *-- Passenger
-    PassengerVehicle <|-- Car
-    PassengerVehicle <|-- Van
-   ```
+    Vehicle *-- Engine : has a
+    Vehicle <|-- MilkFloat : is a
+    Vehicle <|-- PassengerVehicle : is a
+    PassengerVehicle <|-- Car : is a
+    PassengerVehicle <|-- Van : is a
 
-   Person classes
-
-
-   ```mermaid
-classDiagram
-    class Person{
-        <<abstract>>
-        Vehicle[] owns
-    }
-    class Passenger{
-        <<concrete>>
-    }
-    class Driver{
-        <<concrete>>
-        hasLicense
-        getOut()
-    }
-    Person <|-- Passenger
-    Person <|-- Driver
-    Person *-- Vehicle
    ```
