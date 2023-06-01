@@ -1,4 +1,4 @@
-# Week 1: 
+# Week 1
 
 ## Evolution of programming languages
 
@@ -71,7 +71,6 @@ Introduces objects, interfaces
 ```mermaid
 classDiagram
     class Classes {
-        <<interface>>
         + int publicValues
         + String privateValues
         + publicMethods()
