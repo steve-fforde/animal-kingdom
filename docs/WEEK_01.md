@@ -72,10 +72,10 @@ Introduces objects, interfaces
 classDiagram
     class Classes {
         <<interface>>
-        +int publicValues
-        +String privateValues
-        +publicMethods()
-        +privateMethods()
+        + int publicValues
+        + String privateValues
+        + publicMethods()
+        + privateMethods()
     }
 ``` 
 
