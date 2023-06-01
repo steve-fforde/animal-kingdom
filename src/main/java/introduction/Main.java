@@ -1,11 +1,12 @@
 package introduction;
 
-public class Main extends Helper {
+import helpers.Console;
+
+public class Main {
 
   public static void main(String[] args) {
 
-    String name = INPUT("Who are you? ");
-    PRINT("Hello, " + name + "!");
+    Console.print("Hello, World!");
 
   }
 

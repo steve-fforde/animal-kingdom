@@ -1,10 +1,10 @@
-package introduction;
+package helpers;
 
 import java.util.Scanner;
 
-public class Helper {
+public class Console {
 
-  public static String INPUT(String prompt) {
+  public static String input(String prompt) {
 
     String response = "";
     Scanner scanner = new Scanner(System.in);
@@ -28,7 +28,7 @@ public class Helper {
 
   }
 
-  public static void PRINT(String text) {
+  public static void print(String text) {
     System.out.println(text);
   }
 
