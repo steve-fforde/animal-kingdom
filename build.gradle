@@ -1,0 +1,20 @@
+plugins {
+    id 'application'
+}
+
+apply plugin: 'java'
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+run {
+    standardInput = System.in
+}
+
+application {
+    mainClass.set("introduction.Main")
+}
