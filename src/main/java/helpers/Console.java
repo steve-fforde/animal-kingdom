@@ -5,7 +5,13 @@ import java.util.Scanner;
 public class Console {
 
   public static void error(String errorMessage) {
-    System.err.println(errorMessage);
+    String ANSI_RED = "\u001B[31m";
+    String ANSI_RESET = "\u001B[0m";
+    System.err.println(ANSI_RED + errorMessage + ANSI_RESET);
+  }
+
+  public static void error(Exception e) {
+    error(e.toString());
   }
 
   public static String input(String prompt) {
@@ -15,18 +21,17 @@ public class Console {
 
     try {
 
-      System.out.print(prompt);
+      print(prompt);
       response = scanner.nextLine();
 
     } catch (Exception e) {
 
-      System.err.println(e);
+      error(e);
 
     } finally {
       try {
         scanner.close();
-      } catch (Exception e) {
-      }
+      } catch (Exception e) { /* nothing to close */ }
     }
     return response;
 
