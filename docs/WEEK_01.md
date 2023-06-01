@@ -70,7 +70,7 @@ Introduces objects, interfaces
 
 ```mermaid
 classDiagram
-    class Animal {
+    class Classes {
         <<interface>>
         +int publicValues
         +String privateValues
