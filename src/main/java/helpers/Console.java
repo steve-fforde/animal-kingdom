@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Console {
 
+  public static void error(String errorMessage) {
+    System.err.println(errorMessage);
+  }
+
   public static String input(String prompt) {
 
     String response = "";
